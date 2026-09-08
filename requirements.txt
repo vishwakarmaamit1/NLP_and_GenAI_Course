@@ -1,0 +1,5 @@
+# module 1
+jupyter>=1.0
+notebook>=7.0
+ipykernel>=6.0
+nltk>=3.9.0
