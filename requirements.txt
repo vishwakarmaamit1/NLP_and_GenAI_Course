@@ -12,4 +12,5 @@ matplotlib>=3.7
 
 # module 2
 spacy==3.8.16
+seaborn>=0.13
 
