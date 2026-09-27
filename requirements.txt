@@ -14,3 +14,9 @@ matplotlib>=3.7
 spacy==3.8.16
 seaborn>=0.13
 
+# module 3
+transformers==5.17.0
+torch==2.11.0
+torchvision==0.26.0
+torchaudio==2.11.0
+
