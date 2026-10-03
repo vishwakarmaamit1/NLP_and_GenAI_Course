@@ -20,3 +20,13 @@ torch==2.11.0
 torchvision==0.26.0
 torchaudio==2.11.0
 
+# Base Framework
+langchain==1.4.2
+langchain-core>=1.4.9
+langchain-community>=0.3.0
+langchain-text-splitters
+langchain-classic
+
+sentence-transformers
+datasets==2.21.0
+

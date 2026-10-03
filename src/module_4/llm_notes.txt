@@ -1,0 +1,62 @@
+Large Language Models (LLMs)
+A Large Language Model (LLM) is a type of artificial intelligence model designed to understand and generate human language. LLMs are trained on large collections of text and learn patterns, relationships, and structures in language. Examples of LLMs include GPT, Llama, Claude, and Google's T5 and FLAN-T5 models.
+LLMs can perform many language-related tasks, including text generation, question answering, summarization, translation, classification, and information extraction.
+
+Tokenization
+Tokenization is the process of converting text into smaller units called tokens. These tokens can represent words, parts of words, characters, or symbols depending on the tokenizer being used.
+For example, the sentence "Large language models are powerful" might be divided into tokens such as "Large", "language", "models", "are", and "powerful". Modern tokenizers may divide words into smaller subword units.
+Tokenization is important because neural language models do not directly process raw text. They process numerical representations of tokens. Each token is mapped to a numerical token ID before being passed to the model.
+Different tokenization algorithms include Byte Pair Encoding (BPE), WordPiece, and SentencePiece. Subword tokenization allows models to handle words that were not explicitly seen during training by representing them using smaller known pieces.
+The number of tokens in a prompt affects the amount of text that a language model can process. This is related to the model's context window. Longer inputs generally contain more tokens and may require more computational resources.
+
+Embeddings
+An embedding is a numerical representation of text that captures semantic information. Words, sentences, paragraphs, or documents can be converted into vectors containing many numerical values.
+Text embeddings allow systems to compare pieces of text based on semantic similarity rather than simply matching exact words.
+For example, the sentences "How does a language model work?" and "Explain how LLMs operate" use different words but have similar meanings. Their embeddings may therefore be close to each other in vector space.
+Sentence Transformers are commonly used to generate embeddings for semantic search and retrieval applications.
+
+Vector Databases
+A vector database stores numerical vector representations of data and makes it possible to search for vectors that are similar to a query vector.
+FAISS (Facebook AI Similarity Search) is a library for efficient similarity search over dense vectors. It can be used to build a local vector index for document retrieval.
+In a Retrieval-Augmented Generation system, documents are first converted into embeddings and stored in a vector index. When a user asks a question, the question is also converted into an embedding. The system then searches for documents or chunks with similar embeddings.
+
+Retrieval-Augmented Generation
+Retrieval-Augmented Generation, commonly called RAG, combines information retrieval with language generation.
+A typical RAG pipeline has several stages. First, documents are loaded into the system. Next, documents are divided into smaller chunks. Each chunk is converted into an embedding and stored in a vector database.
+When a user submits a question, the question is converted into an embedding. The retrieval system searches the vector database and returns the most relevant chunks.
+The retrieved chunks are then provided as context to a language model. The language model uses this context to generate an answer.
+RAG can help language models answer questions using information from external documents. It is especially useful when the required information is not part of the model's original training data.
+
+Document Chunking
+Document chunking is the process of dividing a large document into smaller pieces before creating embeddings.
+Chunk size determines approximately how much text is contained in each chunk. Chunk overlap allows consecutive chunks to share some text.
+For example, a chunk size of 300 characters with an overlap of 50 characters means that neighboring chunks share approximately 50 characters.
+Chunking is important because very large chunks may contain unrelated information, while very small chunks may lose useful context. The appropriate chunk size depends on the document and application.
+
+Transformers
+The Transformer is a neural network architecture widely used for natural language processing.
+Transformers use an attention mechanism to determine which parts of an input sequence are important when processing each token.
+The Transformer architecture was introduced in the research paper "Attention Is All You Need".
+Transformer-based models are the foundation of many modern language models.
+
+Attention Mechanism
+Attention allows a neural network to focus on different parts of an input sequence when producing a representation or prediction.
+For example, in the sentence "The animal did not cross the road because it was tired", attention can help a model determine which earlier words are relevant to understanding the meaning of "it".
+Self-attention allows tokens within the same sequence to interact with each other. This helps Transformer models capture relationships between words and tokens even when they are far apart in the input.
+
+FLAN-T5
+FLAN-T5 is a family of instruction-tuned models developed by Google. It is based on the T5 architecture.
+T5 represents many NLP tasks as text-to-text problems. For example, a question-answering task can be represented as input text containing a question and context, with the expected answer represented as output text.
+FLAN-T5 models are instruction tuned, which means they have been trained to follow natural-language instructions across a variety of tasks.
+FLAN-T5-small is a relatively small model and can be useful for experimentation on machines with limited computational resources.
+
+Hugging Face
+Hugging Face provides libraries and tools for working with machine learning and natural language processing models.
+The Transformers library provides implementations of many pretrained models and tokenizers.
+The Hugging Face pipeline API provides a convenient interface for performing common machine learning tasks such as text generation, text classification, summarization, question answering, and text-to-text generation.
+
+RAG Example
+Suppose a user asks: "What is tokenization in LLMs and why is it important?"
+A RAG system first converts the question into an embedding. It searches the vector database for chunks related to tokenization. The retrieved chunks may explain that tokenization converts text into smaller units called tokens and that language models process token IDs rather than raw text.
+These retrieved chunks are then supplied to the language model as context. The model uses the retrieved information to generate an answer.
+This approach helps ground the response in the information contained in the source documents.
