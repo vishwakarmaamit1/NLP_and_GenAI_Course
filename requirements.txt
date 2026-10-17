@@ -20,6 +20,7 @@ torch==2.11.0
 torchvision==0.26.0
 torchaudio==2.11.0
 
+# module 4
 # Base Framework
 langchain==1.4.2
 langchain-core>=1.4.9
@@ -30,3 +31,7 @@ langchain-classic
 sentence-transformers
 datasets==2.21.0
 langchain-huggingface==1.2.2
+
+# module 5
+language-tool-python==3.4.0
+ollama>=0.4.0
